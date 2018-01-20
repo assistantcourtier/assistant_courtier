@@ -1,0 +1,17 @@
+.avatar {
+    height: 70px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    width: 50px;
+}
+
+.card-contact {
+display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info-bul {
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

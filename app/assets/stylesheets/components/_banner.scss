@@ -84,8 +84,6 @@ text-align: center;
 }
 
 #step_1 {
-  position: relative;
-  top: 40px;
 }
 #step_4 {
   position: relative;
@@ -109,4 +107,9 @@ text-align: center;
 
 .btn_call_action:hover {
   background: #003459;
+  color: white;
+}
+
+body > div:nth-child(4) > div > div > div > div > div.div > a {
+  text-decoration: none;
 }

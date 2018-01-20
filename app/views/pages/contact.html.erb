@@ -4,14 +4,31 @@
         <div class="col-md-6">
             <div class="banner-content">
                 <h1 style="font-size: 30px;">Quelques clics et on en parle</h1>
-                <p style="border-bottom: 3PX solid #00A8E8;"> Remplissez ce formulaire pour prendre contact avec</br> l'Assistant Courtier</p>
-                <%= simple_form_for @broker, url: create_broker_path do |f|  %>
-                  <%= f.input :address %>
+                <p> Remplissez ce formulaire pour prendre</br> contact avec nous.</p>
+                <%= simple_form_for Broker.new, url: create_broker_path do |f|  %>
+                <p class="bleu">Nom et prénom</p>
+                <%= f.input :name, label: false, placeholder: "Edmond Proust" %>
+                <p class="bleu">Adresse</p>
+                  <%= f.input :address, label: false, placeholder: "102 rue des champs, Paris" %>
+                <p class="bleu">Email</p>
+                  <%= f.input :email, label: false, placeholder: "EdmondProust@gmail.com" %>
+                  <p class="bleu">Message</p>
+                  <%= f.input :description, label: false, placeholder: "Ecrivez nous !" %>
+                  <%= f.submit 'Envoyer', class:'btn_call_action' %>
                 <% end %>
             </div>
         </div>
         <div class="col-md-6">
-            <div id="map" style="width: 100%; height: 600px;"></div>
+          <div class="info-bul">
+            <h3 style="font-size: 25px">Besoin d'informations</h3>
+            <p style="font-size: 20px">N'ésitez pas à appeler votre Assistant Courtier</p>
+            <div class="card-contact">
+              <%= image_tag(asset_path('sonny.png'), class:"avatar") %>
+              <p style="font-size: 18px">Sonny Mochin</p>
+              <p style="font-size: 18px">07 82 31 97 96</p>
+            </div>
+          </div>
+            <div id="map" style="width: 100%; height: 300px;"></div>
         </div>
     </div>
 </div>
@@ -20,5 +37,5 @@
     <%= javascript_tag do %>
         var handler = Gmaps.build('Google'); handler.buildMap({ internal: { id: 'map' } }, function() { markers = handler.addMarkers(
         <%= raw @markers.to_json %>); handler.bounds.extendWith(markers); handler.fitMapToBounds(); if (markers.length == 0) { handler.getMap().setZoom(2); } else if (markers.length == 1) { handler.getMap().setZoom(14); } });
-            <% end %>
-                <% end %>
+    <% end %>
+<% end %>

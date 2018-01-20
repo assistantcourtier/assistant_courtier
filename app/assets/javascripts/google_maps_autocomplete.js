@@ -2,7 +2,7 @@ function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
-  var flatAddress = document.getElementById('flat_address');
+  var flatAddress = document.getElementById('broker_address');
   flatAddress.blur();
   flatAddress.value = components.address;
 
