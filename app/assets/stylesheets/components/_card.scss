@@ -1,4 +1,69 @@
 .card {
-    height: 350px;
-    width: 350px;
+  padding: 5%;
+    background-size: cover !important;
+    background: no-repeat center center fixed;
+    background-size: cover;
+    border-bottom: 2px solid #00A8E8;
+    margin-bottom: 2%;
+    color: black;
+    cursor: pointer;
+}
+
+.up-part-card {
+      display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.blue-and-big {
+    font-size: 50px;
+    color: #00A8E8;
+}
+
+.logo-up-part {
+  text-align: center;
+}
+
+.faded {
+  opacity: 0.8;
+  transition: 2s;
+}
+
+.faded:hover {
+  opacity: 1;
+  transition: 2s;
+}
+
+.faded-max {
+    opacity: 0;
+  transition: 1s;
+}
+.faded-max:hover {
+  opacity: 1;
+  transition: 2s;
+}
+
+.positioning {
+    position: relative;
+    top: 50px;
+    transition: 1s;
+}
+
+.card:hover {
+  .positioning {
+    position: relative;
+    top: 0px;
+    transition: 1s;
+  }
+  .faded-max {
+    opacity: 1;
+    transition: 3s;
+  }
+}
+
+.card-title {
+      font-size: 24px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
 }
