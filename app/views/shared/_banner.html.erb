@@ -1,0 +1,191 @@
+<div class="banner" style="">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-6">
+        <div class="banner-content">
+            <h1>L'assistant courtier</h1>
+            <p style="border-bottom: 3PX solid #00A8E8;">Vous savez sur qui compter</p>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="banner-content-right">
+            <div class="form_home">
+                <%= simple_form_for @info, url: create_info_path do |f|  %>
+                    <div class="form_wrapper_">
+                        <div class="form_line_start" id="step_start">
+                            <p>Tout d'abord prenons 1 minute pour faire connaissance</p>
+                            <div class="flexed" style="justify-content: center;">
+                                    <div class="next_button_1" id="go_to_step_1">
+                                      <p class="btn_call_action" style="width:100%;text-align: center;">C'est parti !</p></br>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_1" id="step_1">
+                            <p>Quel est votre nom ?</p>
+                            <div class="flexed">
+                                <%= f.input :name, label: false, placeholder: "Edmond Proust" %>
+                                    <div class="next_button_1" id="go_to_step_2">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_2" id="step_2">
+                            <p>Bonjour <span id="name"></span>,</br>
+                                <span style="font-size: 15px;">Tout dabord nous aurions besoin de votre email pour vous recontacter <i class="fa fa-smile-o" aria-hidden="true"></i></span></br>
+                                <span style="font-size: 15px;">Ne vous inquietez pas celui ci ne sera pas utilisé à des fins publicitaires.</span>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :email, label: false, placeholder: "EdmondProust@gmail.com" %>
+                                    <div class="next_button_2" id="go_to_step_3">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_3" id="step_3">
+                            <p>Êtes vous ?</br>
+                                <div class="flexed">
+                                    <span class="button_choice" id="step_3_choice_1" value="Courtier"><i class="fa fa-briefcase bleu" aria-hidden="true"></i></br>Courtier</span></br>
+                                    <span class="button_choice" id="step_3_choice_2" value="Mandataire"><i class="fa fa-folder-open bleu" aria-hidden="true"></i></br>Mandataire</span></br>
+                                    <span class="button_choice" id="step_3_choice_3" value="Agent général" style="margin-right: 0px;"><i class="fa fa-handshake-o bleu" aria-hidden="true"></i></br>Agent général</span>
+                                </div>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :role, label: false, :as => :hidden %>
+                                    <div class="next_button_3" id="go_to_step_4">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_4" id="step_4">
+                            <p>Vous êtes donc un <span id="role"></span>,</br>
+                                <span style="font-size: 15px;">Et vous souhaitez ?</span></br>
+                                <div class="flexed">
+                                    <span class="button_choice" id="step_4_choice_1" value="Alleger_vos_formalitees_administratives_ou_commerciales"><i class="fa fa-server bleu" aria-hidden="true"></i></br>Alleger vos formalitées administratives ou commerciales</span></br>
+                                    <span class="button_choice" id="step_4_choice_2" value="Developper_un_secteur_dactivite"><i class="fa fa-bar-chart bleu" aria-hidden="true"></i></br>Développer un secteur d'activité</span></br>
+                                    <span class="button_choice" id="step_4_choice_3" value="Faire_face_a_une_absence_ou_une_surcharge_de_travail_ponctuelle" style="margin-right: 0px;"><i class="fa fa-window-close bleu" aria-hidden="true"></i></br>Faire face à une absence ou une surcharge de travail ponctuelle</span>
+                                </div>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :needed, label: false, :as => :hidden %>
+                                    <div class="next_button_2" id="go_to_step_5">
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_5" id="step_5">
+                            <p>Quel est votre secteur d'activité ?</br>
+                                <span style="font-size: 15px;"></span></br>
+                                <div class="flexed">
+                                </div>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :activity, label: false, placeholder: "Assurance de personnes, Assurance de biens"%>
+                                    <div class="next_button_" id="go_to_step_6">
+                                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_5" id="step_6">
+                            <p>Idéalement,</br>
+                              <span style="font-size: 15px;">Quel secteur d'activité aimeriez vous developper ?</span></br>
+                                <span style="font-size: 15px;"></span></br>
+                                <div class="flexed">
+                                </div>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :dev_activity, label: false, placeholder: "Prévoyance santé, Assurance crédit, MRH, Santé"%>
+                                    <div class="next_button_" id="go_to_step_7">
+                                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_5" id="step_7">
+                            <p>Enfin dites nous,</br>
+                              <span style="font-size: 15px;">quel est le premier frein à ce developement ?</span></br>
+                                <span style="font-size: 15px;"></span></br>
+                                <div class="flexed">
+                                </div>
+                            </p>
+                            <div class="flexed">
+                                <%= f.input :description, label: false, placeholder: "Le temps, le personnel, les nouvelles technologies..."%>
+                                    <div class="next_button_" id="go_to_step_end">
+                                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form_line_end" id="step_end">
+                            <%= f.submit "Welcome to the Hood !" %>
+                        </div>
+                    </div>
+                    <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+    <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+
+           $("#go_to_step_1").click(function(){
+            $("#step_start").hide(500);
+            $("#step_1").show(500);
+          });
+          $("#go_to_step_2").click(function(){
+            name = $("#information_name").val();
+            $("#name").html(name);
+            $("#step_1").hide(500);
+            $("#step_2").show(500);
+          });
+          $("#go_to_step_3").click(function(){
+            $("#step_2").hide(500);
+            $("#step_3").show(500);
+          });
+          $("#step_3_choice_1").click(function(){
+            $("#step_3").hide(500);
+            $("#step_4").show(500);
+            role = $("#step_3_choice_1").text();
+            $("#information_role").val(role);
+            $("#role").html(role);
+          });
+          $("#step_3_choice_2").click(function(){
+            $("#step_3").hide(500);
+            $("#step_4").show(500);
+            role = $("#step_3_choice_2").text();
+            $("#information_role").val(role);
+            $("#role").html(role);
+          });
+          $("#step_3_choice_3").click(function(){
+            $("#step_3").hide(500);
+            $("#step_4").show(500);
+            role = $("#step_3_choice_3").text();
+            $("#information_role").val(role);
+            $("#role").html(role);
+          });
+          $("#step_4_choice_1").click(function(){
+            $("#step_4").hide(500);
+            $("#step_5").show(500);
+            needed = $("#step_4_choice_1").text();
+            $("#information_needed").val(needed);
+          });
+          $("#step_4_choice_2").click(function(){
+            $("#step_4").hide(500);
+            $("#step_5").show(500);
+            needed = $("#step_4_choice_2").text();
+            $("#information_needed").val(needed);
+          });
+          $("#step_4_choice_3").click(function(){
+            $("#step_4").hide(500);
+            $("#step_5").show(500);
+            needed = $("#step_4_choice_3").text();
+            $("#information_needed").val(needed);
+          });
+          $("#go_to_step_6").click(function(){
+            $("#step_5").hide(500);
+            $("#step_6").show(500);
+          });
+          $("#go_to_step_7").click(function(){
+            $("#step_6").hide(500);
+            $("#step_7").show(500);
+          });
+          $("#go_to_step_end").click(function(){
+            $("#step_7").hide(500);
+            $("#step_end").show(500);
+          });
+        <% end %>
+    <% end %>

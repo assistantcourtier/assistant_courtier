@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+.form_home {
+  text-align: center;
+}
+
+.flexed {
+  display: flex;
+  width: 100%;
+}
+
+.form-group {
+width: 100%;
+}
+
+.hidden_groove {
+  opacity: 0;
+  transition: 2s;
+  display: none;
+}
+
+.opac {
+  opacity: 1;
+  transition: 2s;
+  display: true;
+}
+
+.container {
+  width: 100%;
+}
+#step_end > input[type="submit"] {
+      position: relative;
+    top: 80px;
+    padding: 5%;
+    background: white;
+    background-color: white;
+    border: 3PX solid #00A8E8;
+
+}
