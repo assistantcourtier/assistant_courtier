@@ -6,13 +6,6 @@ function onPlaceChanged() {
   flatAddress.blur();
   flatAddress.value = components.address;
 
-  document.getElementById('flat_zip_code').value = components.zip_code;
-  document.getElementById('flat_city').value = components.city;
-
-  if (components.country_code) {
-    var selector = '#flat_country option[value="' + components.country_code + '"]';
-    document.querySelector(selector).selected = true;
-  }
 }
 
 function getAddressComponents(place) {
@@ -21,7 +14,6 @@ function getAddressComponents(place) {
   // - place.geometry.location.lng()
 
   if (window.console && typeof console.log === "function") {
-    console.log(place);
   }
 
   var street_number = null;
@@ -50,15 +42,12 @@ function getAddressComponents(place) {
   }
 
   return {
-    address: street_number === null ? route : (street_number + ' ' + route),
-    zip_code: zip_code,
-    city: city,
-    country_code: country_code
+    address: street_number === null ? route : (street_number + ' ' + route + ' ' + zip_code + ' ' + city),
   };
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  var flatAddress = document.getElementById('flat_address');
+  var flatAddress = document.getElementById('broker_address');
 
   if (flatAddress) {
     var autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: ['geocode'] });
