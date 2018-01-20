@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
-gem 'figaro'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
@@ -15,6 +15,12 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+gem "coffee-rails"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development do
   gem 'web-console', '>= 3.3.0'

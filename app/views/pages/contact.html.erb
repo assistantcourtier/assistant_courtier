@@ -1,0 +1,24 @@
+<div class="padded" style="padding-top: 5%"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="banner-content">
+                <h1 style="font-size: 30px;">Quelques clics et on en parle</h1>
+                <p style="border-bottom: 3PX solid #00A8E8;"> Remplissez ce formulaire pour prendre contact avec</br> l'Assistant Courtier</p>
+                <%= simple_form_for @broker, url: create_broker_path do |f|  %>
+                  <%= f.input :address %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="map" style="width: 100%; height: 600px;"></div>
+        </div>
+    </div>
+</div>
+<div class="padded" style="padding-top: 5%"></div>
+<% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+        var handler = Gmaps.build('Google'); handler.buildMap({ internal: { id: 'map' } }, function() { markers = handler.addMarkers(
+        <%= raw @markers.to_json %>); handler.bounds.extendWith(markers); handler.fitMapToBounds(); if (markers.length == 0) { handler.getMap().setZoom(2); } else if (markers.length == 1) { handler.getMap().setZoom(14); } });
+            <% end %>
+                <% end %>

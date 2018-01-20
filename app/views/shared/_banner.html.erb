@@ -12,15 +12,15 @@
                 <%= simple_form_for @info, url: create_info_path do |f|  %>
                     <div class="form_wrapper_">
                         <div class="form_line_start" id="step_start">
-                            <p>Tout d'abord prenons 1 minute pour faire connaissance</p>
                             <div class="flexed" style="justify-content: center;">
                                     <div class="next_button_1" id="go_to_step_1">
-                                      <p class="btn_call_action" style="width:100%;text-align: center;">C'est parti !</p></br>
+                                      <p class="btn_call_action" style="width:100%;text-align: center;font-size: 26px;position: relative;top: 20px;">Laissez vous guider !</p></br>
                                     </div>
                             </div>
                         </div>
                         <div class="form_line_1" id="step_1">
-                            <p>Quel est votre nom ?</p>
+                          <p>Bonjour,</br></p>
+                          <span style="font-size: 15px;">Je suis <span style="font-weight: 900;font-size: 19px;">l'Asssitant Courtier</span>,</br> faisons connaissance quel est votre nom ?</span>
                             <div class="flexed">
                                 <%= f.input :name, label: false, placeholder: "Edmond Proust" %>
                                     <div class="next_button_1" id="go_to_step_2">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="form_line_2" id="step_2">
-                            <p>Bonjour <span id="name"></span>,</br>
+                            <p>Très bien <span id="name"></span>,</br>
                                 <span style="font-size: 15px;">Tout dabord nous aurions besoin de votre email pour vous recontacter <i class="fa fa-smile-o" aria-hidden="true"></i></span></br>
                                 <span style="font-size: 15px;">Ne vous inquietez pas celui ci ne sera pas utilisé à des fins publicitaires.</span>
                             </p>
